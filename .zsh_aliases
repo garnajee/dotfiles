@@ -1,0 +1,22 @@
+#copie + move + rm avec intéraction
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+#view files
+alias l='ls -lFGh --color=auto'
+alias la='/usr/bin/clear && ls -alFGh --color=auto'
+alias ll='/usr/bin/clear && ls -lFGh --color=auto'
+
+# latex in real time
+alias latek='latexmk -pvc -pdf -shell-escape'
+alias clean='latexmk -c'
+ 
+# run pdf with evince without warnings (function)
+alias -s pdf="evinc "
+
+function evinc() {
+    /usr/bin/evince ${1} > /dev/null 2>&1 &
+}
+
+# for evince (with warnings, without function): alias -s pdf=evince

@@ -1,0 +1,11 @@
+*aide-008.txt*
+
+Trouver le code couleur de n'importe quoi sur l'écran
+
+|008.1| Commande
+
+==============================================================================
+*008.1* Commande
+
+$ gcolor2
+

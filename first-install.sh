@@ -2,7 +2,7 @@
 
 # my packages
 sudo apt update
-sudo apt install -y zsh terminator vim vim-gtk3 aptitude git wget curl tldr
+sudo apt install -y zsh terminator vim vim-gtk3 aptitude git curl tldr
 
 # Download all config files
 
@@ -63,3 +63,4 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 # apply all changes
 exec $SHELL
+

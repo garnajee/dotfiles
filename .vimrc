@@ -130,7 +130,14 @@ set incsearch
 set hlsearch
 " appui sur * sur un mot pour le rechercher dans le document depuis le début
 
+" -----------------
+" | Best map ever |
+" -----------------
 
+" To clear the last used search pattern:
+map // :let @/ = ""<CR>
+" This will not set the pattern to an empty string, because that would match
+" everywhere.  The pattern is really cleared, like when starting Vim.
 
 " --------------
 " | Auto-close |
@@ -139,10 +146,8 @@ set hlsearch
 " pour l'édition LaTeX
 "inoremap $$ $$$$<Esc>hi
 
-
 " ---- LaTeX ----
 let g:tex_flavor='latex'
-
 
 " ---- Compilation ----
 
@@ -156,23 +161,19 @@ map <F3> :w <CR> :!gcc % && ./a.out <CR>
 " idem que pour le map du C
 map <F4> :w <CR> :!g++ % && ./a.out <CR>
 
-" ===================
-
 " ===== JAVA =====
 map sout<Tab> i<C-T>System.out.println("");<Esc>F"i
 
+" ===================
 
 " ==== Colorscheme =====
 set t_Co=256
 set t_ut=
 colorscheme codedark
 
-
 "highlight Cursorline = green
 "let g:gruvbox_contrast_dark = 'hard'
 " colorscheme gruvbox
-
-
 
 " True Colors are a requirement for color scheme
 
@@ -190,13 +191,11 @@ endif
 "   set termguicolors
 " endif
 
-
 " ==== VIM STATUS BAR ====
 
 set laststatus=2
 
 " set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
-
 
 " set statusline=[%n]\ %F\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ %=[%M%R%H%W%Y]\ l:%l c:%c\ \|\ L:%L\ \|\ %p%%
 
@@ -239,7 +238,6 @@ hi User4 guifg=#ffffff  guibg=#005FFF
 
 " Disable all blinking:
 set guicursor+=a:blinkon0
-
 
 " PYTHON auto indent
 set cindent

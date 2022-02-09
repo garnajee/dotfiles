@@ -2,29 +2,35 @@
 My personal dotfiles
 
 # Table of content
-1. [full installation](#full-installation)
-2. [zsh installation](#zsh-installation)
-3. [vim installation](#vim-installation)
+* [full installation](#full-installation)
+* [zsh installation](#zsh-installation)
+* [vim installation](#vim-installation)
 
 ## Full installation
 
 I made a script to:
 
-* install all the packages I need
-* download zsh (+aliases), vim (+doc) config files
+* install all the packages I need (zsh, terminator, vim (+gtk3), aptitude, git, curl, tldr)
+* download zsh (+ aliases, + plugins), vim (+ doc) config files
 * change default terminal application and default shell
 * ...
 
-1. Download this script
+1. Download and execute this script
 
-`$ wget https://raw.githubusercontent.com/JeanS-github/dotfiles/main/first-install.sh`
+(you'll ask for sudo permission)
+
+```sh
+$ wget https://raw.githubusercontent.com/JeanS-github/dotfiles/main/first-install.sh
+$ chmod +x first-install.sh
+$ ./first-install.sh
+```
 
 
-2. Zsh installation
+# Zsh installation
 
-`wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/main/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/main/.zshrc_aliases`
+`wget -P ~ https://raw.githubusercontent.com/JeanS-github/dofiles/main/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/main/.zshrc_aliases`
 
-3. Vim installation
+# Vim installation
 
 Installation of my `.vimrc` and plugins:
 
@@ -41,3 +47,4 @@ Installation of my personnal documentation:
 mkdir -p ~/.vim/doc
 wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/main/doc/aide-0{01..15}.txt https://raw.githubusercontent.com/JeanS-github/dotfiles/main/doc/aide.txt
 ```
+

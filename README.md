@@ -15,7 +15,7 @@ I made a script to:
 * change default terminal application and default shell
 * ...
 
-1. Download and execute this script
+Download and execute this script
 
 (you'll ask for sudo permission)
 

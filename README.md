@@ -27,7 +27,9 @@ $ ./first-install.sh
 
 # Zsh installation
 
-`wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zsh_aliases`
+```sh
+wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zsh_aliases
+```
 
 # Vim installation
 

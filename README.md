@@ -20,9 +20,9 @@ Download and execute this script
 (you'll ask for sudo permission)
 
 ```sh
-$ wget https://raw.githubusercontent.com/JeanS-github/dotfiles/master/first-install.sh
-$ chmod +x first-install.sh
-$ ./first-install.sh
+wget https://raw.githubusercontent.com/JeanS-github/dotfiles/master/first-install.sh
+chmod +x first-install.sh
+./first-install.sh
 ```
 
 # Zsh installation

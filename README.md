@@ -5,6 +5,7 @@ My personal dotfiles
 * [full installation](#full-installation)
 * [zsh installation](#zsh-installation)
 * [vim installation](#vim-installation)
+* [bin files](#bin-files)
 
 ## Full installation
 
@@ -48,4 +49,8 @@ Installation of my personnal documentation:
 mkdir -p ~/.vim/doc
 wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide-0{01..15}.txt https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide.txt
 ```
+
+# Bin files
+
+*Comming soon*
 

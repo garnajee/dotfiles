@@ -2,7 +2,7 @@ setopt PROMPT_SUBST
 PROMPT=$'%{$fg_bold[green]%}%n %{$reset_color%}%{$fg_bold[blue]%}$(showone)%{$reset_color%}%{$fg[blue]%} $%{$fg_bold[blue]%}%{$reset_color%} '
 
 function showone() {
-    echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~} | sed -e 's/^\/h\/jean/~/'
+    echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~} | sed -e 's/^\/h\/jean/~/' | sed -e 's#^//#/#'
 }
 
 # ====== Github ======
@@ -19,12 +19,17 @@ RPROMPT=\$vcs_info_msg_0_
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000000
-SAVEHIST=1000000
-setopt autocd extendedglob
+HISTSIZE=1000000000     # indicates how many commands from your history file are loaded into the shell’s memory
+SAVEHIST=$HISTSIZE      # indicates how many commands your history file can hold (you want this equal or larger than HISTSIZE)
+
+setopt share_history    # share command history between all sessions
+setopt hist_ignore_dups # ignore duplicated commands history list
+setopt hist_ignore_all_dups # Delete old recorded entry if new entry is a duplicate
+setopt autocd extendedglob  # change directory without the cd command
 setopt always_to_end	# le curseur part a la fin apres la completion
 setopt no_hup		# On ne tue pas les sous-process ...
 setopt no_check_jobs	# ... en sortant
+setopt interactive_comments # words beginning by '#' will be ignored up to a newline
 
 # Binkeys
 bindkey -e

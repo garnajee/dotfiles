@@ -27,7 +27,7 @@ wget -O ~/.vimrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 mkdir -p ~/.vim/doc
-wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide-001.txt{01..15}.txt https://raw.githubusercontent.com/JeanS-github/vimrc/main/doc/aide.txt
+wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide-0{01..15}.txt https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.vimrc
 echo -e "\nTo install doc, run vim and type:\n:helptags ~/.vim/doc\n"
 
 # bin files
@@ -49,7 +49,7 @@ sudo chsh -s /usr/bin/zsh
 if grep -q "/usr/bin/zsh" /etc/passwd; then echo "file already changed"; else "No zsh in this file, need to change..."; fi
 read -p "Do you want to manually change the passwd file? [y/n]: " ANSWER
 case $ANSWER in
-    [y]* ) sed_fun_change; echo "you need to disconnect and reconnect";
+    [y]* ) sed_fun_change; echo "you need to disconnect and reconnect";;
     [n]* ) echo "ok, no changes, exit."; exit;;
     * ) echo "Answer is y or n.";;
 esac

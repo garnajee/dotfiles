@@ -135,9 +135,11 @@ set hlsearch
 " -----------------
 
 " To clear the last used search pattern:
-map // :let @/ = ""<CR>
+"map // :let @/ = ""<CR>
 " This will not set the pattern to an empty string, because that would match
 " everywhere.  The pattern is really cleared, like when starting Vim.
+" Other way to clear the highlights but keeping the search term in the search register
+map // :noh<CR>
 
 " --------------
 " | Auto-close |

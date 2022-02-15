@@ -13,6 +13,7 @@ setopt PROMPT_SUBST
 # \ue0a0 = branch icon
 # to be able to see git branch, install the package fonts-powerline
 zstyle ':vcs_info:git:*' formats ' %b'
+#zstyle ':vcs_info:git:*' formats $(echo "\ue0a0")' %b'
 RPROMPT=\$vcs_info_msg_0_
 # ===== End Github ====
 

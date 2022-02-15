@@ -10,10 +10,10 @@ sudo apt install -y zsh terminator vim vim-gtk3 aptitude git curl tldr
 wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zsh_aliases
 
 # Download the 3 best zsh plugins
-mkdir -p /opt/zsh-plugins/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-plugins/
-git clone https://github.com/zsh-users/zsh-completions.git /opt/zsh-plugins/
-git clone https://github.com/zsh-users/zsh-autosuggestions /opt/zsh-plugins/
+sudo mkdir -p /opt/zsh-plugins/{zsh-syntax-highlighting,zsh-completions-zsh-autosuggestions}
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-plugins/zsh-syntax-highlighting/
+git clone https://github.com/zsh-users/zsh-completions.git /opt/zsh-plugins/zsh-completions/
+git clone https://github.com/zsh-users/zsh-autosuggestions /opt/zsh-plugins/zsh-autosuggestions/
 
 ##echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc 
 ##echo "source /opt/zsh-plugins/zsh-completions/zsh-completions.plugin.zsh >> ~/.zshrc"

@@ -2,7 +2,7 @@ setopt PROMPT_SUBST
 PROMPT=$'%{$fg_bold[green]%}%n %{$reset_color%}%{$fg_bold[blue]%}$(showone)%{$reset_color%}%{$fg[blue]%} $%{$fg_bold[blue]%}%{$reset_color%} '
 
 function showone() {
-    echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~} | sed -e 's/^\/h\/jean/~/' | sed -e 's#^//#/#'
+    echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~} | sed -e 's/^\/h\/'$(id -un)'/~/' | sed -e 's#^//#/#'
 }
 
 # ====== Github ======
@@ -39,7 +39,7 @@ bindkey "^[[1;5D" backward-word
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jean/.zshrc'
+zstyle :compinstall filename '/home/'$(id -un)'/.zshrc'
 
 autoload -Uz compinit
 compinit

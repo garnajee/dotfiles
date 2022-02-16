@@ -10,16 +10,16 @@ sudo apt install -y zsh terminator vim vim-gtk3 aptitude git curl tldr
 wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zsh_aliases
 
 # Download the 3 best zsh plugins
-sudo mkdir -p /opt/zsh-plugins/{zsh-syntax-highlighting,zsh-completions-zsh-autosuggestions}
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-plugins/zsh-syntax-highlighting/
-git clone https://github.com/zsh-users/zsh-completions.git /opt/zsh-plugins/zsh-completions/
-git clone https://github.com/zsh-users/zsh-autosuggestions /opt/zsh-plugins/zsh-autosuggestions/
+sudo mkdir -p /opt/zsh-plugins/{zsh-syntax-highlighting,zsh-completions,zsh-autosuggestions}
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-plugins/zsh-syntax-highlighting/
+sudo git clone https://github.com/zsh-users/zsh-completions.git /opt/zsh-plugins/zsh-completions/
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions /opt/zsh-plugins/zsh-autosuggestions/
 
-##echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc 
-##echo "source /opt/zsh-plugins/zsh-completions/zsh-completions.plugin.zsh >> ~/.zshrc"
-##echo "source /opt/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >> ~/.zshrc"
+##echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null" >> ${ZDOTDIR:-$HOME}/.zshrc 
+##echo "source /opt/zsh-plugins/zsh-completions/zsh-completions.zsh 2>/dev/null" >> ~/.zshrc
+##echo "source /opt/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null" >> ~/.zshrc
 
-rm -f ~/.zcompdump; compinit
+# rm -f ~/.zcompdump; compinit
 
 # vim plugins and doc
 mkdir -p ~/.vim/bundle
@@ -37,7 +37,7 @@ echo -e "\nTo install doc, run vim and type:\n:helptags ~/.vim/doc\n"
 ## wget -O ~/bin/ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/bin/*
 ## OR git clone the entire repository
 
-# function for manually change shell in /etc/passwd file with sed
+# function for manually change shell in /etc/passwd file with sed, if chsh doesn't work
 sed_fun_change () {
    sudo sed -i 's#/bin/bash#'$(which zsh)'#' /etc/passwd
 }

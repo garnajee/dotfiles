@@ -3,6 +3,10 @@
 # my packages
 sudo apt update
 sudo apt install -y zsh terminator vim vim-gtk3 aptitude git curl tldr
+# for LateX
+# sudo apt install -y vim-latexsuite
+# if no latex menu in gvim: in terminal:
+# $ vim-addons install latex-suite
 
 # Download all config files
 

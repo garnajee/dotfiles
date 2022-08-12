@@ -42,10 +42,12 @@ bindkey "^[[1;5D" backward-word
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/'$(id -un)'/.zshrc'
-
+# zsh completion system
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# small letters will match small and capital letters
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 #Aliases
 if [ -f ~/.zsh_aliases ]; then

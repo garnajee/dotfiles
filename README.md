@@ -5,6 +5,8 @@ My personal dotfiles
 * [full installation](#full-installation)
 * [zsh installation](#zsh-installation)
 * [vim installation](#vim-installation)
+  * [full installation](#full-installation)
+  * [minimal installation](#minimal-installation)
 * [bin files](#bin-files)
 
 ## Full installation
@@ -34,7 +36,7 @@ wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc 
 
 # Vim installation
 
-## Full installation
+## Full installation
 
 Installation of my `.vimrc` and plugins:
 
@@ -52,7 +54,7 @@ mkdir -p ~/.vim/doc
 wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide-0{01..15}.txt https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide.txt
 ```
 
-## Minimal installation
+## Minimal installation
 
 Installation of my `.vimrc` without plugins and doc, only colors.
 

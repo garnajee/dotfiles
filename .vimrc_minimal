@@ -1,0 +1,143 @@
+set nocompatible              " be iMproved, required
+set encoding=utf-8
+
+" Enable syntax highlighting
+syntax on
+
+" Command-line completion
+set wildmenu
+" see ":help wildmenu' for more details
+
+set wrap
+set linebreak
+set showmatch   "Highlight matching brace
+set guioptions-=r " Removes right hand scroll bar
+
+"---------------
+" | Indentation |
+" ---------------
+
+set autoindent
+set smartindent
+
+" Indentation settings for using 4 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Use visual bell instead of beeping when doing something wrong
+" set visualbell
+
+" And reset the terminal code for the visual bell. If visualbell is set, and
+" this line is also included, vim will neither flash nor beep. If visualbell
+" is unset, this does nothing.
+set t_vb=
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Display line numbers on the left
+set number
+
+" Count pattern found by a '/' search
+set shortmess-=S
+
+" Always show cursor position
+set ruler
+
+" recherche en ignorant majuscule ou minuscule SI on tape en minuscule
+set ignorecase
+" SI on tape une recherche en majuscule => maj ou min pris en compte
+set smartcase
+" recherche incrémentale
+set incsearch
+" highlight
+set hlsearch
+" appui sur * sur un mot pour le rechercher dans le document depuis le début
+
+" -----------------
+" | Best map ever |
+" -----------------
+
+" To clear the last used search pattern:
+"map // :let @/ = ""<CR>
+" This will not set the pattern to an empty string, because that would match
+" everywhere.  The pattern is really cleared, like when starting Vim.
+" Other way to clear the highlights but keeping the search term in the search register
+map // :noh<CR>
+
+" --------------
+" | Auto-close |
+" --------------
+
+" pour l'édition LaTeX
+"inoremap $$ $$$$<Esc>hi
+
+" ---- LaTeX ----
+let g:tex_flavor='latex'
+
+" ==== Colorscheme =====
+set t_Co=256
+set t_ut=
+colorscheme codedark
+
+" True Colors are a requirement for color scheme
+
+" For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+
+" ==== VIM STATUS BAR ====
+
+set laststatus=2
+
+" set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
+
+" set statusline=[%n]\ %F\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ %=[%M%R%H%W%Y]\ l:%l c:%c\ \|\ L:%L\ \|\ %p%%
+
+set statusline=%9*[%n]
+set statusline+=%9*\ 
+set statusline+=%1*%<%f
+" set statusline+=%m%R%H%W
+" set statusline+=%1*%{&modified?'[+]\ ':''}
+set statusline+=%2*%{&modified?'[+]':''}
+" set statusline+=%1*%{&readonly?'\ ':''}
+set statusline+=%3*%{&readonly?'🔒':''}
+set statusline+=%<
+set statusline+=%=
+set statusline+=%4*[%Y]\ 
+set statusline+=%4*l:%l/%L\ \|\ c:%c\ 
+set statusline+=%4*\\|\ %p%%\ 
+
+function! HighlightSearch()
+  if &hls
+    return 'H'
+  else
+    return ''
+  endif
+endfunction
+
+" buffer number
+" hi User0 guifg=#ffffff guibg=#E0444A
+" hi User0 guifg=#ffffff guibg=#E0444A
+" file path/name
+hi User1  gui=bold,italic
+" mofified file ?
+hi User2 guifg=#ffffff  guibg=#FF0000
+" read-only file ?
+hi User3 guifg=#ffffff
+" raw,col
+hi User4 guifg=#ffffff  guibg=#005FFF
+" %9* doesn't exist, it's just to avoid like a space in the chosen color
+
+" ==== END VIM STATUS BAR ====
+
+" Disable all blinking:
+set guicursor+=a:blinkon0
+
+" PYTHON auto indent
+set cindent
+autocmd FileType python setlocal foldmethod=indent smartindent shiftwidth=4 ts=4 et cinwords=if,elif,else,for,while,try,except,finally,def,class
+

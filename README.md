@@ -34,6 +34,8 @@ wget -P ~ https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.zshrc 
 
 # Vim installation
 
+## Full installation
+
 Installation of my `.vimrc` and plugins:
 
 ```sh
@@ -49,6 +51,18 @@ Installation of my personnal documentation:
 mkdir -p ~/.vim/doc
 wget -P ~/.vim/doc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide-0{01..15}.txt https://raw.githubusercontent.com/JeanS-github/dotfiles/master/doc/aide.txt
 ```
+
+## Minimal installation
+
+Installation of my `.vimrc` without plugins and doc, only colors.
+
+```sh
+mkdir -p ~/.vim/colors
+wget -P ~/.vim/colors/ https://raw.githubusercontent.com/tomasiser/vim-code-dark/master/colors/codedark.vim
+wget -O ~/.vimrc https://raw.githubusercontent.com/JeanS-github/dotfiles/master/.vimrc_minimal
+```
+
+Now, enjoy!
 
 # Bin files
 
